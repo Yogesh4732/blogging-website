@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-r+q+z42SNEU8XtzvCeMlP8y2U5D/tzHT1sbbimOJCifDabFF+2Iyzor3U8tZ3cxY"
+        crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        h1 {
+            color: #082f56;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-label {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-buttons .btn {
+            margin-right: 10px;
+            border-radius: 30px;
+            padding: 10px 20px;
+        }
+
+        .btn-facebook {
+            background-color: #3b5998;
+            border-color: #3b5998;
+            color: #fff;
+        }
+
+        .btn-facebook:hover {
+            background-color: #2d4373;
+            border-color: #2d4373;
+        }
+
+        .btn-twitter {
+            background-color: #1da1f2;
+            border-color: #1da1f2;
+            color: #fff;
+        }
+
+        .btn-twitter:hover {
+            background-color: #0b7bc5;
+            border-color: #0b7bc5;
+        }
+
+        .btn-instagram {
+            background-color: #c13584;
+            border-color: #c13584;
+            color: #fff;
+        }
+
+        .btn-instagram:hover {
+            background-color: #a3316f;
+            border-color: #a3316f;
+        }
+
+        .btn-linkedin {
+            background-color: #0077b5;
+            border-color: #0077b5;
+            color: #fff;
+        }
+
+        .btn-linkedin:hover {
+            background-color: #005f89;
+            border-color: #005f89;
+        }
+    </style>
+    <title>Edit Article</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mb-4">Edit Article</h1>
+        <form action="/articles/<%=article.id %>?_method=PUT" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="<%= article.title %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" name="description"
+                    value="<%= article.description %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="markdown" class="form-label">Markdown</label>
+                <textarea class="form-control" id="markdown" name="markdown" rows="6"
+                    required><%= article.markdown %></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Article</button>
+        </form>
+
+        <div class="social-buttons">
+            <a href="#" class="btn btn-facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="btn btn-twitter"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" class="btn btn-instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="btn btn-linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+        integrity="sha384-+zeFphLm3KkUOT5sVJ/9nDMoPKDRTDNs7AAB1sHvAoz7ncoUpUC1Ljj7iEBGKScw"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
